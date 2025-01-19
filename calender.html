@@ -1,0 +1,55 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calendar</title>
+</head>
+<body>
+
+<h2>Enter a Year:</h2>
+<input type="number" id="year" placeholder="Enter Year">
+<button onclick="generateCalendar()">Generate</button>
+<div id="calendar"></div>
+
+<script>
+function generateCalendar() {
+    var year = document.getElementById("year").value;
+    if (!year) return alert("Please enter a year!");
+
+    var calendar = document.getElementById("calendar");
+    calendar.innerHTML = ''; // Clear previous calendar
+
+    // Loop through months
+    for (var month = 0; month < 12; month++) 
+    {
+        var firstDay = new Date(year, month, 1);
+        var lastDay = new Date(year, month + 1, 0);
+        var daysInMonth = lastDay.getDate();
+        var startDay = firstDay.getDay();
+
+        var table = `<h3>${firstDay.toLocaleString('default', { month: 'long' })} ${year}</h3>
+                     <table border="1">
+                     <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>`;
+
+        // Add empty cells for days before the 1st of the month
+        table += '<tr>';
+        for (var i = 0; i < startDay; i++) table += '<td></td>';
+
+        // Add the days of the month
+        for (var day = 1; day <= daysInMonth; day++) {
+            table += `<td>${day}</td>`;
+            if ((startDay + day) % 7 === 0) table += '</tr><tr>';
+        }
+
+        table += '</tr></table>';
+        calendar.innerHTML += table;
+    }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+<body>
+<center>
+    <button onclick="myArray()"><h1>Changing Background Color</h1></button>
+
+<script>	
+function myArray() {
+    var colors = ["#00ff00", "#ff0000", "#0000ff", "#cce","#ffffff","#000000","#ffff00","#00ffff","#808000"];
+    var randomcolor = colors[Math.floor(Math.random() * colors.length)];
+    document.body.style.backgroundColor = randomcolor;
+}
+</script>
+
+
+</center>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+
+<body>
+    <h1>Online Computer Quiz</h1>
+    <form>
+
+        <label>QN1. The brain of the computer is ____________ .</label><br>
+        <input type="radio" name="qn1" value="qn1an1" class="quiz-option">Keyboard<br>
+        <input type="radio" name="qn1" value="qn1an2" class="quiz-option">Mouse<br>
+        <input type="radio" name="qn1" id="an1" value="qn1an3" class="quiz-option">CPU<br>
+        <input type="radio" name="qn1" value="qn1an4" class="quiz-option">Monitor<br><br >
+        <label>QN2. Which is the main memory of the computer?</label><br>
+        <input type="radio" name="qn2" value="qn2an1" class="quiz-option">ROM<br>
+        <input type="radio" name="qn2" value="qn2an2" class="quiz-option">Hard Disk<br>
+        <input type="radio" name="qn2" id="an2" value="qn2an3"
+        class="quiz-option">RAM<br>
+        <input type="radio" name="qn2" value="qn2an4"
+        class="quiz-option">CD-Rom<br><br>
+        <input type="submit" onclick="result()" value="Submit Quiz">
+    </form>
+        </div>
+        <script>
+            function result() {
+                var score = 0;
+                if (document.getElementById('an1').checked) score += 1;
+                if (document.getElementById('an2').checked) score += 1;
+                alert("Your Score is " + score + " out of 2.");
+            }
+        </script>
+</body>
+
+</html>

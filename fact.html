@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>fact</title>
+</head>
+
+<body>
+    <h1>factorial</h1>
+    <form>
+        <table>
+            <tr>
+                <th>number:</th>
+                <td><input type="number" id="nu" required></input></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick=fact()>fact</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+<script>
+    function fact($n) {
+        var $n=getElementById(nu).value;
+        fact=$n*fact($n-1);
+        print(fact);
+
+
+    }
+    
+</script>
+
+</html>

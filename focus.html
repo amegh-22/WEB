@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onfocus and onblur Events</title>
+    <style>
+        input {
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Click the input field below</h1>
+<input type="text" id="myInput" placeholder="Focus on me!">
+
+<script>
+// Get the input field element
+var inputField = document.getElementById('myInput');
+
+// Add an event listener for when the input field gains focus (onfocus)
+inputField.addEventListener('focus', function() {
+    inputField.style.backgroundColor = 'lightyellow'; // Change background color to light yellow
+});
+
+// Add an event listener for when the input field loses focus (onblur)
+inputField.addEventListener('blur', function() {
+    inputField.style.backgroundColor = 'black'; // Change background color back to white
+});
+</script>
+
+</body>
+</html>
